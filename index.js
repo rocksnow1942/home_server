@@ -6,4 +6,6 @@ app.get('/',(req,res)=>{
     res.json({msg:'hello world!'})
 })
 
-app.listen(port)
+app.listen(port,()=>{
+    console.log(`Server started at http://localhost:${port}`);
+})
