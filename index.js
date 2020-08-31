@@ -4,9 +4,12 @@ const port = 3337
 
 
 app.get('/',(req,res)=>{
-    res.json({msg:'hello world!'})
+    res.json({data:'hello world!'})
 })
 
+app.get('/echo',(req,res)=>{
+    res.json({data:req.url})
+})
 
 
 app.listen(port,()=>{
