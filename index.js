@@ -7,7 +7,7 @@ app.get('/',(req,res)=>{
     res.json({data:'hello world!'})
 })
 
-app.get('/echo',(req,res)=>{
+app.get('/echo/:text',(req,res)=>{
     res.json({data:req.url})
 })
 
