@@ -1,6 +1,6 @@
 {
   "name": "home_server",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "express server for pi.hole",
   "main": "index.js",
   "scripts": {
