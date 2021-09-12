@@ -15,7 +15,7 @@
             min-width: 8em;
             margin: 8px 8px;
             border: none;
-            border-radius: 0.3em;
+            border-radius: 5px;
             font-size: large;
         }
         
@@ -28,22 +28,10 @@
             transform: translateY(1px);
         }
         #clear {
-            min-width: 0.1em;
-            width: 2em;
-            height: 2em;
-            padding: 0px 0px;
-            background-color: #f44336;
-            border-radius: 50%;
-            border: 5px solid #f44336;
-        }
-        #cross {
-            font-size: 55px;
-            line-height: 0px;            
-            position: relative;
-            color: #fff;
-            top:13px;      
-            left:-3px;
-        }
+            min-width: fit-content;            
+            padding: 4px 10px;
+            background-color: #f44336;            
+        }      
         #clear:hover {
             background-color: #e22b1e;            
         }
@@ -75,7 +63,7 @@
         }
     </style>
     <div style="display: flex; align-items:center; justify-content: center;">
-    <h1 align='center'>FUNCTIONs</h1>    <button id='clear'><span id='cross'>&times;</span></button>
+    <h1 align='center'>FUNCTIONs</h1>    <button id='clear'>Clear</button>
     </div>
     <div class="button-list">
         <button id='make-call'>Call API</button>
