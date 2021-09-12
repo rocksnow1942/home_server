@@ -16,7 +16,7 @@ function fetchAPI(url,method,data) {
         return response.json()})
     .then(data => {
         if (status !== 200) {
-            throw new Error(`Status code ${status}, ${data}`);
+            throw new Error(`Status code ${status}, ${JSON.stringify(data)}`);
         } else {
             display.prepend(createListNode(data));
         }   
