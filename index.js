@@ -18,6 +18,10 @@ app.get('/',(req,res)=>{
 
 
 
+// capture un handled routes
+app.use((req,res,next)=>{
+    res.status(404).json({error:`End point: ${req.url} is not found.`})
+})
 
 app.listen(port,()=>{
     console.log(`Server started at http://localhost:${port}`);
