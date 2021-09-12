@@ -22,7 +22,7 @@ function fetchAPI(url,method,data) {
         }   
     })
     .catch(error => {
-        display.prepend(createListNode(error,true));
+        display.prepend(createListNode(`${error}`,true));
     })
     
 
