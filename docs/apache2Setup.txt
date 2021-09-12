@@ -1,0 +1,49 @@
+To server static files form a different directory:
+
+Goal: I have my static files under /home_server/html
+
+Modify /etc/apache2/apache2.conf file by adding the following line:
+<Directory /home_server/html/>
+	Options Indexes FollowSymLinks
+	AllowOverride None
+	Require all granted
+</Directory>
+
+
+Modify the /etc/apache2/sites-available/000-default.conf file:
+
+
+<VirtualHost *:80>
+	ServerAdmin webmaster@localhost
+	DocumentRoot /home_server/html	
+	ErrorLog ${APACHE_LOG_DIR}/error.log
+	CustomLog ${APACHE_LOG_DIR}/access.log combined
+    Redirect "/movie" "http://movie.pi.hole"
+	Redirect "/admin" "http://admin.pi.hole"
+	Redirect "/api"   "http://api.pi.hole"
+	Redirect "/test"  "http://test.pi.hole"
+</VirtualHost>
+
+the redirect are redirecting to a different site, for example, 
+
+<VirtualHost *:80>
+    ServerName api.pi.hole
+    ProxyPass / http://localhost:3337/
+    ProxyPassReverse / http://localhost:3337/
+</VirtualHost>
+
+This redirect all visit to pi.hole/api to api.pi.hole then to the localhost:3337
+
+ <VirtualHost *:80>
+    ServerName movie.pi.hole
+    ErrorLog /var/log/apache2/jellyfin-error.log
+    CustomLog /var/log/apache2/jellyfin-access.log combined
+    ProxyPreserveHost On
+    ProxyPass "/" "http://127.0.0.1:8096/"
+    ProxyPassReverse "/" "http://127.0.0.1:8096/"
+ </VirtualHost>
+
+This redirect all vist to pi.hole/movie to movie.pi.hole then to the localhost:8096
+
+
+

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My functions</title>
+</head>
+<body>
+    <style>
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 14px 20px;
+            margin: 8px 8px;
+            border: none;
+            border-radius: 0.3em;
+            font-size: large;
+        }
+        
+        button:hover {
+            background-color: #45a049;
+            cursor: pointer;
+        }
+        button:active {
+            background-color: #62b166;
+            transform: translateY(1px);
+        }
+        #clear {
+            background-color: #f44336;
+        }
+        #clear:hover {
+            background-color: #e22b1e;            
+        }
+        .button-list {
+            display: flex-wrap;
+            align-items: center;
+            justify-content: center;
+            justify-content: center;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        #response-display {
+            margin:auto;
+            padding: 1em;
+            max-width: 800px;
+        }
+        .response-list-item{
+            margin: 0.1em;
+            list-style: none;
+            color: #70ff75;
+            background-color: #111;
+            padding: 0.3em 0.6em;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: small;
+            border-radius: 0.3em;            
+        }
+    </style>
+    <h1 align='center'>My functions <button id='clear'>Clear</button></h1>    
+    <div class="button-list">
+        <button id='make-call'>Call API</button>
+        <button >PH</button>
+        <button >PH</button>
+        <button >PH</button>
+        <button >PH</button>
+        <button >PH</button>        
+    </div>
+    
+    <div id='response-display'>        
+        <li class='response-list-item'>Response Display</li>        
+    </div>
+    
+
+    <script src='./apicall.js'>
+    </script>
+</body>
+</html>
