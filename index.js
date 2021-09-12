@@ -1,9 +1,17 @@
 const express = require('express')
-const app = express()
-const port = 3337
-const {dev:{url}} = require('./development.config')
+const cors = requrie('cors')
 
-console.log(url);
+const app = express()
+
+app.use(cors({
+   origin:'*' 
+}))
+
+const port = 3337
+
+
+
+
 
 
 app.get('/',(req,res)=>{
